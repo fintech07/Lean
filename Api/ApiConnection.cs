@@ -52,6 +52,8 @@ namespace QuantConnect.Api
             _token = token;
             _userId = userId.ToStringInvariant();
             Client = new RestClient(ApiUrl);
+            Client.Proxy = null;
+            System.Net.WebRequest.DefaultWebProxy = null;
         }
 
         /// <summary>
