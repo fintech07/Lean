@@ -258,7 +258,7 @@ namespace QuantConnect.Lean.Engine.DataFeeds.Enumerators
 
             if (nextEndTimeUtc < previousTimeUtc)
             {
-                Log.Error("FillForwardEnumerator received data out of order. Symbol: " + previous.Symbol.ID);
+                Log.Error($"FillForwardEnumerator received data out of order. Symbol: {previous.Symbol.ID}. Next {nextEndTimeUtc}. Previous {previousTimeUtc}");
                 fillForward = null;
                 return false;
             }
